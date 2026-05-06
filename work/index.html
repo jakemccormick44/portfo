@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work | Jake McCormick</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav-bar">
+    <a href="../index.html" class="nav-logo">JAKE<span>.</span></a>
+    <div class="nav-links">
+      <a href="../index.html" class="nav-item">Index</a>
+      <a href="../about/index.html" class="nav-item">About</a>
+      <a href="index.html" class="nav-item active">Work</a>
+      <a href="../music/index.html" class="nav-item">Music</a>
+      <a href="../resume/index.html" class="nav-item">Résumé</a>
+      <a href="../contact/index.html" class="nav-item">Contact</a>
+    </div>
+  </nav>
+
+  <main class="page-wrap container pt-2">
+    <h1 class="t-heading mb-4">Work / Projects</h1>
+    
+    <!-- Filter Tabs -->
+    <div class="filter-tabs" id="work-filters">
+      <button class="filter-tab active" data-filter="all">All</button>
+      <button class="filter-tab" data-filter="print">Print</button>
+      <button class="filter-tab" data-filter="digital">Digital</button>
+      <button class="filter-tab" data-filter="photography">Photography</button>
+    </div>
+
+    <!-- Print Section -->
+    <div class="work-section mb-4" data-medium="print">
+      <div class="collapsible-header" onclick="toggleSection('print-grid', this)">
+        <h2 class="t-section">Print</h2>
+        <span class="t-display toggle-icon">−</span>
+      </div>
+      <div class="grid grid-auto" id="print-grid">
+        <a href="#" class="project-card hover-lift">
+          <img src="../images/MAYBEMcCormickJakeMonster1.jpg" alt="Monster" class="card-img">
+          <div class="card-info">
+            <div>
+              <div class="t-card">Zine Issue 01</div>
+              <div class="t-label t-secondary">Print</div>
+            </div>
+            <div class="card-arrow t-card">→</div>
+          </div>
+        </a>
+        <a href="#" class="project-card hover-lift">
+          <img src="../images/Ominous%20Landscape2.jpg" alt="Ominous Landscape" class="card-img">
+          <div class="card-info">
+            <div>
+              <div class="t-card">Gig Poster Series</div>
+              <div class="t-label t-secondary">Print</div>
+            </div>
+            <div class="card-arrow t-card">→</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Digital Section -->
+    <div class="work-section mb-4" data-medium="digital">
+      <div class="collapsible-header" onclick="toggleSection('digital-grid', this)">
+        <h2 class="t-section">Digital</h2>
+        <span class="t-display toggle-icon">−</span>
+      </div>
+      <div class="grid grid-auto" id="digital-grid">
+        <a href="#" class="project-card hover-lift">
+          <img src="../images/BitchmadePoster.jpg" alt="Poster" class="card-img">
+          <div class="card-info">
+            <div>
+              <div class="t-card">Maybe Next Year Site</div>
+              <div class="t-label t-secondary">Digital</div>
+            </div>
+            <div class="card-arrow t-card">→</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Photography Section -->
+    <div class="work-section mb-4" data-medium="photography">
+      <div class="collapsible-header" onclick="toggleSection('photo-grid', this)">
+        <h2 class="t-section">Photography</h2>
+        <span class="t-display toggle-icon">−</span>
+      </div>
+      <div class="grid grid-auto" id="photo-grid">
+        <a href="#" class="project-card hover-lift">
+          <div class="card-img img-placeholder"></div>
+          <div class="card-info">
+            <div>
+              <div class="t-card">Tour Diary 2023</div>
+              <div class="t-label t-secondary">Photography</div>
+            </div>
+            <div class="card-arrow t-card">→</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Filtering Logic
+    const filters = document.querySelectorAll('.filter-tab');
+    const sections = document.querySelectorAll('.work-section');
+
+    filters.forEach(filter => {
+      filter.addEventListener('click', () => {
+        // Active state
+        filters.forEach(f => f.classList.remove('active'));
+        filter.classList.add('active');
+
+        const filterValue = filter.getAttribute('data-filter');
+
+        sections.forEach(section => {
+          if (filterValue === 'all' || section.getAttribute('data-medium') === filterValue) {
+            section.style.display = 'block';
+          } else {
+            section.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Collapsible Logic
+    function toggleSection(gridId, headerElement) {
+      const grid = document.getElementById(gridId);
+      const icon = headerElement.querySelector('.toggle-icon');
+      
+      if (grid.style.display === 'none') {
+        grid.style.display = 'grid';
+        icon.textContent = '−';
+      } else {
+        grid.style.display = 'none';
+        icon.textContent = '+';
+      }
+    }
+  </script>
+
+</body>
+</html>

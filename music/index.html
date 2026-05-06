@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music | Jake McCormick</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .music-hero {
+      background-color: var(--c-ink);
+      color: var(--c-bone);
+      background-image: 
+        linear-gradient(rgba(242, 237, 228, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(242, 237, 228, 0.1) 1px, transparent 1px);
+      background-size: 20px 20px;
+      padding: clamp(60px, 10vw, 120px) var(--pad);
+      text-align: center;
+      border-bottom: var(--rule);
+    }
+    
+    .release-card {
+      border: var(--rule);
+      padding: 1.5rem;
+      background: var(--c-bone);
+    }
+
+    .shows-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-mono);
+    }
+
+    .shows-table th, .shows-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: var(--rule-mid);
+    }
+
+    .shows-table th {
+      text-transform: uppercase;
+      font-size: var(--f-label);
+      letter-spacing: 0.1em;
+      color: var(--c-mid);
+    }
+
+    @media (max-width: 600px) {
+      .shows-table thead {
+        display: none;
+      }
+      .shows-table td {
+        display: block;
+        padding: 0.5rem 0;
+        border: none;
+      }
+      .shows-table tr {
+        display: block;
+        border-bottom: var(--rule);
+        padding: 1rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav-bar">
+    <a href="../index.html" class="nav-logo">JAKE<span>.</span></a>
+    <div class="nav-links">
+      <a href="../index.html" class="nav-item">Index</a>
+      <a href="../about/index.html" class="nav-item">About</a>
+      <a href="../work/index.html" class="nav-item">Work</a>
+      <a href="index.html" class="nav-item active">Music</a>
+      <a href="../resume/index.html" class="nav-item">Résumé</a>
+      <a href="../contact/index.html" class="nav-item">Contact</a>
+    </div>
+  </nav>
+
+  <main class="page-wrap">
+    
+    <!-- Band Hero -->
+    <section class="music-hero">
+      <div class="t-label mb-1">Maybe Next Year</div>
+      <h1 class="t-display mb-2 t-red">NOISY.<br>LOUD.<br>HONEST.</h1>
+      <p class="t-body container" style="max-width: 600px;">Lexington-based post-hardcore / noise rock. Full creative direction, production, and screaming by Jake McCormick.</p>
+    </section>
+
+    <!-- Releases -->
+    <section class="container">
+      <h2 class="t-heading mb-4">Releases</h2>
+      <div class="grid grid-auto">
+        <div class="release-card">
+          <div class="img-placeholder aspect-video mb-2"></div>
+          <h3 class="t-card mb-1">Maybe Next Year live at WRFL</h3>
+          <p class="t-label t-secondary mb-2">Live Session</p>
+          <div class="tag-cloud">
+            <a href="https://soundcloud.com/maybe-next-year" target="_blank" class="btn btn-fill" style="padding: 0.5rem 1rem; font-size: 11px;">SoundCloud</a>
+          </div>
+        </div>
+        <div class="release-card">
+          <div class="img-placeholder aspect-video mb-2"></div>
+          <h3 class="t-card mb-1">MAYBEMcCormickJakeMonster1</h3>
+          <p class="t-label t-secondary mb-2">Single</p>
+          <div class="tag-cloud">
+            <a href="https://soundcloud.com/maybe-next-year" target="_blank" class="btn btn-fill" style="padding: 0.5rem 1rem; font-size: 11px;">SoundCloud</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Art Direction Grid -->
+    <section class="container border-top">
+      <h2 class="t-heading mb-4">Art Direction</h2>
+      <div class="grid grid-3">
+        <div class="img-placeholder aspect-video"></div>
+        <div class="img-placeholder aspect-video"></div>
+        <div class="img-placeholder aspect-video"></div>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>

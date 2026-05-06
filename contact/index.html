@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Jake McCormick</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav-bar">
+    <a href="../index.html" class="nav-logo">JAKE<span>.</span></a>
+    <div class="nav-links">
+      <a href="../index.html" class="nav-item">Index</a>
+      <a href="../about/index.html" class="nav-item">About</a>
+      <a href="../work/index.html" class="nav-item">Work</a>
+      <a href="../music/index.html" class="nav-item">Music</a>
+      <a href="../resume/index.html" class="nav-item">Résumé</a>
+      <a href="index.html" class="nav-item active">Contact</a>
+    </div>
+  </nav>
+
+  <main class="page-wrap container pt-2 pb-4">
+    <h1 class="t-heading mb-4">Contact</h1>
+
+    <div class="contact-layout">
+      
+      <!-- Left Column: Direct Links -->
+      <div>
+        <div class="t-section mb-2">Let's work together.</div>
+        <p class="t-body t-secondary mb-4" style="max-width: 400px;">
+          Feel free to reach out directly or use the form.
+        </p>
+
+        <a href="mailto:Jakemccormick44@gmail.com" class="contact-card">
+          <div class="t-label t-secondary mb-1">Email</div>
+          <div class="t-card">Jakemccormick44@gmail.com</div>
+        </a>
+
+        <a href="https://instagram.com/Jakemccormickk_2" target="_blank" class="contact-card">
+          <div class="t-label t-secondary mb-1">Instagram</div>
+          <div class="t-card">@Jakemccormickk_2</div>
+        </a>
+
+
+      </div>
+
+      <!-- Right Column: Form -->
+      <div>
+        <form id="contact-form">
+          
+          <div class="form-group">
+            <label class="t-label t-secondary">Name</label>
+            <input type="text" class="form-input" required>
+          </div>
+
+          <div class="form-group">
+            <label class="t-label t-secondary">Email</label>
+            <input type="email" class="form-input" required>
+          </div>
+
+          <div class="form-group">
+            <label class="t-label t-secondary">Message</label>
+            <textarea class="form-input" rows="4" style="resize: vertical;" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="t-label t-secondary">Project Interests</label>
+            <div class="checkbox-group">
+              <label class="checkbox-label t-body">
+                <input type="checkbox" name="interest" value="print"> Print Design
+              </label>
+              <label class="checkbox-label t-body">
+                <input type="checkbox" name="interest" value="editorial"> Editorial
+              </label>
+              <label class="checkbox-label t-body">
+                <input type="checkbox" name="interest" value="branding"> Branding
+              </label>
+              <label class="checkbox-label t-body">
+                <input type="checkbox" name="interest" value="album"> Album Art
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-fill mt-4">Send Message</button>
+        </form>
+
+        <!-- Success State -->
+        <div id="success-msg" class="mt-4">
+          <h3 class="t-section mb-1">Message Received</h3>
+          <p class="t-body">Thank you for reaching out. I'll get back to you within 48 hours.</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    const form = document.getElementById('contact-form');
+    const successMsg = document.getElementById('success-msg');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault(); // Prevent page reload
+      
+      // Hide form and show success message
+      form.style.display = 'none';
+      successMsg.style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>
